@@ -13,4 +13,23 @@
  * */
 export default class Team {
   // TODO: write your logic here
+  constructor(characters) {
+    this.characters = characters;
+  }
+
+  addCharacter(character) {
+    this.characters.push(character);
+  }
+
+  removeCharacter(index) {
+    if (index >= 0 && index < this.characters.length) {
+      this.characters.splice(index, 1);
+    } else {
+      throw new Error('Invalid index');
+    }
+  }
+
+  getCharacters() {
+    return this.characters;
+  }
 }
