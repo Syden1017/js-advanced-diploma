@@ -203,7 +203,7 @@ export default class GamePlay {
   hideCellTooltip(index) {
     this.cells[index].title = '';
   }
-  
+
   showDamage(index, damage) {
     return new Promise((resolve) => {
       const cell = this.cells[index];
@@ -221,6 +221,18 @@ export default class GamePlay {
 
   setCursor(cursor) {
     this.boardEl.style.cursor = cursor;
+  }
+
+  highlightCell(cellIndex, color) {
+    if (this.cells[cellIndex]) {
+      this.cells[cellIndex].style.backgroundColor = color;
+    }
+  }
+
+  clearCellHighlight(cellIndex) {
+    if (this.cells[cellIndex]) {
+      this.cells[cellIndex].style.backgroundColor = '';
+    }
   }
 
   checkBinding() {
